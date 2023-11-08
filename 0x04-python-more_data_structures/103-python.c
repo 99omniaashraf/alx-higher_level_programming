@@ -1,5 +1,4 @@
 #include <Python.h>
-#include <stdio.h>
 
 /**
  * print_python_list - print basic info about Python lists
@@ -9,7 +8,7 @@
 void print_python_list(PyObject *p)
 {
 	int size = 0;
-	PyObject *item;
+	const char *type;
 	int i = 0;
 
 	size = PyList_Size(p);
@@ -20,10 +19,10 @@ void print_python_list(PyObject *p)
 
 	while (i < size)
 	{
-		item = PyList_GET_ITEM(p, i);
-		printf("Element %d: %s\n", i, item->ob_type->tp_name);
-		if (PyBytes_Check(item))
-			print_python_bytes(item);
+		type = list->ob_item[i]>ob_type->tp_name;
+		printf("Element %d: %s\n", i, type);
+		if (strcmp(type, "bytes") == 0)
+			print_python_bytes(list->ob-item[i]);
 		i++;
 	}	
 }
