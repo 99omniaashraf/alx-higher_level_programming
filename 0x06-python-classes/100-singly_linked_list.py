@@ -48,23 +48,22 @@ class SinglyLinkedList:
         """Insert a new Node to the SinglyLinkedList.
 
 
-        The node is inserted into the list at the correct
-        ordered numerical position.
-
 
         Args:
             value (Node): The new Node to insert.
         """
-        if self.__head is None:
-            self.__head = Node(value)
+        new_node = Node(value)
+        if self.__head:
+            current = self.__head
+            while current.next_node:
+                current = current.next_node
+            current.next_node = Node(value)
         else:
-            new_node = Node(value)
-            tmp = self.__head
-            while tmp is not None:
-                if tmp.__next_node is None:
-                    tmp.__next_node = new_node
-                    new_node.__next_node = None
-                if new_node.__data < tmp.__next_node.__data:
-                    new_node.__next_node = tmp.__next_node
-                    tmp.__next_node = new_node
-                tmp = tmp.__next_node
+            self.__head = new_node
+
+    def __str__(self):
+        current = self.__head
+        while current:
+            print(current.data)
+            current = current.next_node
+        return ''
