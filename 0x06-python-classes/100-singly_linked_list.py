@@ -45,13 +45,6 @@ class SinglyLinkedList:
         self.__head = None
 
     def sorted_insert(self, value):
-        """Insert a new Node to the SinglyLinkedList.
-
-
-
-        Args:
-            value (Node): The new Node to insert.
-        """
         new_node = Node(value)
         if self.__head:
             current = self.__head
