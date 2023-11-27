@@ -21,9 +21,7 @@ class Rectangle:
 
         Args:
             width: An integer representing object width.
-                Has a default value of 0.
             height: An integer representing object height.
-                Has a default value of 0.
         """
         self.__width = width
         self.__height = height
