@@ -2,7 +2,6 @@
 """Rectangle Class.
 
 This module contains an empty class that defines a rectangle.
-
 """
 
 
@@ -18,7 +17,6 @@ class Rectangle:
 
         Initiatilizes Rectangle with width and height.
 
-
         Args:
             width: An integer representing object width.
             height: An integer representing object height.
@@ -30,7 +28,6 @@ class Rectangle:
     def width(self):
         """Gets the width private attribute value.
 
-
         Returns:
             The width private attribute.
         """
@@ -40,11 +37,10 @@ class Rectangle:
     def width(self, value):
         """Sets the width private attribute value.
 
-        Validates the assignment of the width private attribute value.
-
+        Validates the assignment of the width private attribute.
 
         Args:
-            value: The value to be set.
+            value: the value to be set.
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -65,10 +61,10 @@ class Rectangle:
     def height(self, value):
         """Sets the height private attribute value.
 
-        Validates the assignment of the height private attribute value.
+        Validates the assignment of the height private attribute.
 
         Args:
-            value: The value to be set.
+            value: the value to be set.
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
