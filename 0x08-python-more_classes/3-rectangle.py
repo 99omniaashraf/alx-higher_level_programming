@@ -78,7 +78,7 @@ class Rectangle:
         Returns:
             The current rectangle area.
         """
-        return self.__width * self.__height
+        return self.width * self.height
 
     def perimeter(self):
         """A public object method.
@@ -86,20 +86,13 @@ class Rectangle:
         Returns:
             The current rectangle perimeter.
         """
-        if self.__width == 0 or self.__height == 0:
-            return 0
-        else:
-            return 2 * (self.__width + self.__height)
+        return 2 * (self.width + self.height) if self.width > 0 and self.height > 0 else 0
 
     def __str__(self):
         """Returns an informal and nicely printable string representation
         of a Rectangle instance, filled with the '#' character.
         """
-        if self.__height == 0 or self.__width == 0:
+        if self.width == 0 or self.height == 0:
             return ""
-        rec_str = ""
-        for i in range(self.__height):
-            for j in range(self.__width):
-                rec_str += "#"
-            rec_str += "\n"
-        return rec_str[:-1]
+        else:
+            return '\n'.join(['#' * self.width] * self.height)
