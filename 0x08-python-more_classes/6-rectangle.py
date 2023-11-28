@@ -9,6 +9,8 @@ class Rectangle:
         width: An integer indicating the width of the rectangle object.
         height: An integer indicating the height of the rectangle object.
     """
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """Initiatilizes Rectangle with width and height."""
 
