@@ -17,14 +17,17 @@ def is_safe(board, row, col, N):
 
     return True
 
+
 def print_solution(board, N):
     for row in board:
         print(" ".join("Q" if cell == 1 else "." for cell in row))
     print()
 
+
 def solve_nqueens(N):
     board = [[0 for _ in range(N)] for _ in range(N)]
     solve_util(board, 0, N)
+
 
 def solve_util(board, row, N):
     if row == N:
@@ -35,6 +38,7 @@ def solve_util(board, row, N):
             board[row][col] = 1
             solve_util(board, row + 1, N)
             board[row][col] = 0
+
 
 def main():
     if len(sys.argv) != 2:
@@ -53,6 +57,6 @@ def main():
 
     solve_nqueens(N)
 
+
 if __name__ == "__main__":
     main()
-
