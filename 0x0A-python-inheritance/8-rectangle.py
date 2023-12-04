@@ -19,7 +19,10 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
 
+
 """Module 8-rectangle"""
+
+
 class Rectangle(BaseGeometry):
     """Represent a rectangle.
     private instance attributes:
