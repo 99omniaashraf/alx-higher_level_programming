@@ -17,5 +17,5 @@ def pascal_triangle(n):
     for i in range(n):
         num = 11 ** i
         li = [int(n) for n in str(num)]
-        my_lisst.append(li)
+        my_list.append(li)
     return my_list
