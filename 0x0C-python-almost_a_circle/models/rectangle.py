@@ -28,7 +28,7 @@ class Rectangle(Base):
         """
 
         self.width = width
-        self.height= height
+        self.height = height
         self.x = x
         self.y = y
         super().__init__(id)
@@ -37,7 +37,7 @@ class Rectangle(Base):
     def width(self):
         """Retrieves the width attribute."""
         return self.__width
-    
+
     @property
     def height(self):
         """Retrieves the height attribute."""
@@ -88,7 +88,7 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-    
+
     def area(self):
         """Calculates the area of a Rectangle instance.
         Returns; area
@@ -154,5 +154,5 @@ class Rectangle(Base):
     def to_dictionary(self):
         """Returns the dictionary representation of a Rectangle."""
         my_dict = {'id': self.id, 'width': self.__width,
-                    'height': self.__height, 'x': self.__x, 'y': self.__y}
+                   'height': self.__height, 'x': self.__x, 'y': self.__y}
         return my_dict

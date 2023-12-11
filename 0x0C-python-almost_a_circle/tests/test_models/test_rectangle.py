@@ -52,7 +52,7 @@ class TestRectangle(unittest.TestCase):
             "__init__() missing 1 required positional argument: 'height'", str(
                 x.exception))
         s = ("__init__() missing 2 required positional" +
-            " arguments: 'width' and 'height'")
+               " arguments: 'width' and 'height'")
         with self.assertRaises(TypeError) as x:
             r1 = Rectangle()
         self.assertEqual(s, str(x.exception))
@@ -111,6 +111,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(
             "area() takes 1 positional argument but 2 were given", str(
                 x.exception))
+
     def test_5_0(self):
         """Test for public method display."""
         f = io.StringIO()
@@ -120,6 +121,7 @@ class TestRectangle(unittest.TestCase):
         s = f.getvalue()
         res = "####\n####\n####\n####\n####"
         self.assertEqual(s, res)
+
     def test_5_1(self):
         """Test for public method display with wrong args."""
         with self.assertRaises(TypeError) as x:
@@ -216,6 +218,7 @@ class TestRectangle(unittest.TestCase):
             r1 = Rectangle(10, 2, 1, 9)
             r1_dictionary = r1.to_dictionary("Hi")
         self.assertEqual(s, str(x.exception))
+
 
 if __name__ == '__main__':
     unittest.main()

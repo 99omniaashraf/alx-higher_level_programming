@@ -42,10 +42,11 @@ class Base:
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         if (type(list_dictionaries) != list or
-            not all(type(x) == dict for x in list_dictionaries)):
+           not all(type(x) == dict for x in list_dictionaries)):
             raise TypeError("list_dictionaries must be a list of dictionaries")
         return json.dumps(list_dictionaries)
-    @classmethod
+
+    @cilassmethod
     def save_to_file(cls, list_objs):
         """Writes the JSON string representation of list_objs
         to a file.
@@ -70,12 +71,12 @@ class Base:
         Args:
             json_string: string to convert to list.
         """
-        l = []
+        new = []
         if json_string is not None and json_string != '':
             if type(json_string) != str:
                 raise TypeError("json_string must be a string")
-            l = json.loads(json_string)
-        return l
+            new = json.loads(json_string)
+        return new
 
     @classmethod
     def create(cls, **dictionary):
@@ -98,15 +99,15 @@ class Base:
     def load_from_file(cls):
         """Returns a list of instances."""
         filename = cls.__name__ + ".json"
-        l = []
+        tmp = []
         list_dicts = []
         if os.path.exists(filename):
             with open(filename, 'r') as f:
                 s = f.read()
                 list_dicts = cls.from_json_string(s)
                 for d in list_dicts:
-                    l.append(cls.create(**d))
-        return l
+                    tmp.append(cls.create(**d))
+        return tmp
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
@@ -119,7 +120,7 @@ class Base:
         """
         if (type(list_objs) != list and
             list_objs is not None or
-            not all(isinstance(x, cls) for x in list_objs)):
+           not all(isinstance(x, cls) for x in list_objs)):
             raise TypeError("list_objs must be a list of instances")
         filename = cls.__name__ + ".csv"
         with open(filename, 'w') as f:
@@ -140,7 +141,7 @@ class Base:
         Returns: list of instance.
         """
         filename = cls.__name__ + ".csv"
-        l = []
+        a = []
         if os.path.exists(filename):
             with open(filename, 'r') as f:
                 reader = csv.reader(f, delimiter=',')
@@ -154,8 +155,8 @@ class Base:
                         for j, e in enumerate(row):
                             if e:
                                 setattr(i, fields[j], int(e))
-                        l.append(i)
-        return l
+                        a.append(i)
+        return a
 
     @staticmethod
     def draw(list_rectangles, list_squares):

@@ -92,11 +92,11 @@ class TestBase(unittest.TestCase):
         self.assertEqual(
             "list_dictionaries must be a list of dictionaries", str(
                 x.exception))
-    
+
     def test_15_2(self):
         """Test static method to_json_string with wrong number of args."""
         s1 = ("to_json_string() missing 1 required positional argument: " +
-                "'list_dictionaries'")
+            "'list_dictionaries'")
         with self.assertRaises(TypeError) as x:
             Base.to_json_string()
         self.assertEqual(s1, str(x.exception))
@@ -158,7 +158,7 @@ class TestBase(unittest.TestCase):
     def test_16_2(self):
         """Test class method save_to_file with wrong args."""
         s1 = ("save_to_file() missing 1 required" +
-                " positional argument: 'list_objs'")
+            " positional argument: 'list_objs'")
         with self.assertRaises(TypeError) as x:
             Rectangle.save_to_file([Rectangle(9, 4), Rectangle(8, 9)], 98)
         self.assertEqual(s2, str(x.exception))
@@ -349,6 +349,7 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(TypeError) as x:
             list_rectangles_output = Rectangle.load_from_file_csv("Hello")
         self.assertEqual(s, str(x.exception))
+
 
 if __name__ == '__main__':
     unittest.main()
