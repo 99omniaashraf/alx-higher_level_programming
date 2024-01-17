@@ -1,5 +1,4 @@
 -- use left JOIN and subquery
--- Execute: cat 101-not_a_comedy.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 SELECT title 
 FROM tv_shows
 WHERE title NOT IN (SELECT tv_shows.title
