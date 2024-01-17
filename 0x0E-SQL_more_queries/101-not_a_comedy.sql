@@ -1,7 +1,7 @@
 --Use LEFT JOIN and subquery
-SELECT title
+SELECT title 
 FROM tv_shows
-WHERE title NOT IN (SELECT tv_show.title
+WHERE title NOT IN (SELECT tv_shows.title
 	FROM tv_shows
 	LEFT JOIN tv_show_genres
 	ON tv_shows.id = tv_show_genres.show_id
